@@ -26,3 +26,9 @@ Route::get('profile', ProfileController::class)->name('profile');
 
 Route::resource('employees',EmployeeController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
